@@ -5,6 +5,8 @@ import com.example.appmobile.service.EleveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EleveController {
 
@@ -35,6 +37,11 @@ public class EleveController {
         eleveService.updateEleve(eleve);
         //EleveDTO newTweet = tweetService.createTweet(tweet.toTweet()).toTweetDTO();
         //return ResponseEntity.created(URI.create(newTweet.getId())).body(newTweet);
+    }
+
+    @GetMapping("/eleves")
+    public List<Eleve> getAllEleve(){
+        return eleveService.findAllEleves();
     }
 /*
     @PutMapping("/tweets/{id}")

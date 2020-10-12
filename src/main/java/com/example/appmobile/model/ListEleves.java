@@ -44,4 +44,10 @@ public class ListEleves {
         eleves.remove(eleveToUpdate);
         eleves.add(eleve);
     }
+
+    public static List<Eleve> findAllEleves() {
+
+
+        return eleves;
+    }
 }
