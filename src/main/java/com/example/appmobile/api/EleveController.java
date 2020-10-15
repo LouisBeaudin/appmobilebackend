@@ -15,10 +15,8 @@ public class EleveController {
 
     @PostMapping("/eleve")
     @ResponseBody
-    public void createEleve(@RequestBody Eleve eleve) {
-        eleveService.createEleve(eleve);
-        //EleveDTO newTweet = tweetService.createTweet(tweet.toTweet()).toTweetDTO();
-        //return ResponseEntity.created(URI.create(newTweet.getId())).body(newTweet);
+    public Eleve createEleve(@RequestBody Eleve eleve) {
+        return eleveService.createEleve(eleve);
     }
 
     @GetMapping("/eleve/{email}")
@@ -35,19 +33,10 @@ public class EleveController {
     @ResponseBody
     public void updateEleve(@RequestBody Eleve eleve) {
         eleveService.updateEleve(eleve);
-        //EleveDTO newTweet = tweetService.createTweet(tweet.toTweet()).toTweetDTO();
-        //return ResponseEntity.created(URI.create(newTweet.getId())).body(newTweet);
     }
 
     @GetMapping("/eleves")
     public List<Eleve> getAllEleve(){
         return eleveService.findAllEleves();
     }
-/*
-    @PutMapping("/tweets/{id}")
-    public void updateTweet(@PathParam("id") String id, TweetDTO tweet){
-
-    }
-
- */
 }

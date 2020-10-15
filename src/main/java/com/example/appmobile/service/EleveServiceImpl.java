@@ -7,12 +7,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EleveServiceImpl implements EleveService{
+public class EleveServiceImpl implements EleveService {
 
 
     @Override
-    public void createEleve(Eleve eleve) {
+    public Eleve createEleve(Eleve eleve) {
         ListEleves.addEleve(eleve);
+        return eleve;
     }
 
     @Override
@@ -21,13 +22,15 @@ public class EleveServiceImpl implements EleveService{
     }
 
     @Override
-    public void deleteEleve(String email) {
+    public Eleve deleteEleve(String email) {
         ListEleves.deleteEleve(email);
+        return ListEleves.getByEmail(email);
     }
 
     @Override
-    public void updateEleve(Eleve eleve) {
+    public Eleve updateEleve(Eleve eleve) {
         ListEleves.updateEleve(eleve);
+        return eleve;
     }
 
     @Override
